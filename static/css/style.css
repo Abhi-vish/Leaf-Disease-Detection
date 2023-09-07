@@ -1,0 +1,64 @@
+.content {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.title1 {
+    font-family: 'Josefin Sans', sans-serif;
+    color: green;
+    font-weight: 900;
+    font-size: 50px;
+    margin-top: 50px;
+}
+.subtitle {
+    font-size: 20px;
+    font-family: 'Nunito', sans-serif;
+}
+.btn {
+    margin-top:40px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* index.html css  */
+
+.container_detect{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.img {
+    width: 200px;
+    padding-bottom: 10px;
+}
+
+.upload_title {
+    font-weight: bold;
+    font-style: italic;
+}
+.upload_title:hover{
+    cursor: pointer;
+}
+
+.btn1 a {
+    text-decoration: none;
+    color: white;
+}
+.btn1 button:focus {
+    outline: none;
+}
+
+
+/* submit css  */
+
+.card1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

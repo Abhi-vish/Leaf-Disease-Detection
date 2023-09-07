@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="card card1" style="width: 18rem;">
+    <img src="{{ data.image }}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Disease Detection</h5>
+      <p class="card-text">{{ data.prediction }}</p>
+    </div>
+  </div>
+
+
+{% endblock %}

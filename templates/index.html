@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container text-center container_detect">
+    <!-- Default bootstrap file upload-->
+    
+    <form action="/submit" method="POST" enctype="multipart/form-data">
+        <div class="custom-file overflow-hidden mb-4">
+            <img src="static/img/plant-1573.svg" class="img" alt="image"><br>
+            <input type="file" id="actual-btn" hidden name="image" />
+            <label for="actual-btn" class="upload_title">Choose File</label> <br>
+            <span id="file-chosen"class="text-decoration-underline">No file chosen</span>
+        </div>
+
+        <!-- End -->
+
+        <h6 class="text-center mb-2 text-muted">
+            Simply upload your plant's leaf image and then see the magic of AI.
+        </h6>
+
+        <!-- Custom bootstrap upload file-->
+        <center>
+            <a class="mx-2" style="text-decoration: none;"><button type="submit" class="btn btn-outline-success">Submit</button></a>
+        </center>
+    </form>
+    <!-- End -->
+</div>
+
+<script>
+    const actual_btn = document.getElementById('actual-btn');
+    const file_choosen = document.getElementById('file-chosen')
+
+    actual_btn.addEventListener('change',function () {
+        file_choosen.textContent = this.files[0].name;
+    });
+</script>
+
+{% endblock  %}

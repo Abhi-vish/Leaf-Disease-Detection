@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<div class="container content">
+    <div>
+        <h1 class="text-center title1"><i class="fa-solid fa-leaf"> </i> Leaf Disease Detection <i class="fa-solid fa-leaf"> </i></h1>
+        <h4 class="text-center subtitle">This AI will help you to detect disease in following fruit and veggies</h4>
+    </div>
+    <div class="btn1">
+        <center>
+            <a class="mx-2" href="{{ url_for('ai_detect_page' )}}"><button type="submit" class="btn btn-outline-success">Detect Disease</button></a>
+        </center>
+    </div>
+</div>
+<div class="container">
+    
+</div>
+
+{% endblock  %}

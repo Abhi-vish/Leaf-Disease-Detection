@@ -6,7 +6,7 @@ from PIL import Image
 import torchvision.models as models
 import pandas as pd
 import numpy as np
-
+import csv
 
 # Reading the dataset
 disease_info = pd.read_csv('Model/disease_info.csv')
@@ -59,6 +59,21 @@ def home():
 def ai_detect_page():
     return render_template('index.html')
 
+@app.route('/supplement')
+def supplement():
+   # Read data from the CSV file
+    supplement_data = []
+    with open('Model\supplement_info.csv', 'r') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            supplement_data.append({
+                'supplement': row['supplement name'],
+                'supplement_img': row['supplement image'],
+                'supplement_prod_link': row['buy link']
+            })
+
+    return render_template('supplement.html', supplement_data=supplement_data)
+
 @app.route('/submit', methods=['POST'])
 def submit():
     if request.method == 'POST':
@@ -71,6 +86,9 @@ def submit():
             # Perform prediction
             pred = prediction(file_path)
             title = disease_info['disease_name'][pred]
+            supplement = suppliment_info['supplement name'][pred]
+            supplement_img = suppliment_info['supplement image'][pred]
+            supplement_prod_link = suppliment_info['buy link'][pred]
 
             image_url = '/' + file_path
 
@@ -78,6 +96,12 @@ def submit():
             response = {
                 'prediction': title,
                 'image':image_url,
+                'discrption':disease_info['description'][pred],
+                'possible_step':disease_info['Possible Steps'][pred],
+                'supplement':supplement,
+                'supplement_img':supplement_img,
+                'supplement_name':suppliment_info['supplement name'][pred],
+                "supplement_prod_link":supplement_prod_link
                 }
             # return jsonify(response)
             return render_template('submit.html',data=response)

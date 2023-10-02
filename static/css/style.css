@@ -21,6 +21,14 @@
     justify-content: center;
 }
 
+/* navbar chatbot button  */
+/* .chat2 {
+    position: absolute; 
+    right: 20px; 
+    background-color: rgb(211, 206, 206); 
+    border-radius: 10px; 
+    padding: 10px;
+} */
 
 
 /* index.html css  */
@@ -151,5 +159,85 @@
     .img2 {
         height: 150px;
     }
-    
+
+    /* navbar chatbot button  */
+/* .chat2 {
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    transition: ease-in;
+}
+     */
  }
+/* This is the style for the modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* This is the style for the modal content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    position: relative; /* Make the content a positioning context */
+    height: 70vh; /* Set a specific height for modal content */
+    overflow: hidden; /* Hide overflow content */
+  }
+  
+  /* This is the style for the close button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* Style the input field and make it sticky at the bottom */
+  .bottom-0 {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-end; /* Push items to the bottom */
+    height: 100%; /* Occupy the full height of modal content */
+  }
+
+  #text {
+    width: 100%; /* Expand the input field to full width */
+    margin-bottom: 10px; /* Add some space between input and submit button */
+    padding: 5px; /* Add padding for better appearance */
+  }
+
+  /* Style the submit button */
+  input[type="submit"] {
+    position: sticky;
+    bottom: 100px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+  }
+
+  /* Style the <p> tag */
+  #answer {
+    margin-top: 20px; /* Add some space between the form and the <p> tag */
+  }
+
+
+

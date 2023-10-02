@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    .container {
+        width: 70vh;
+        height: 100%;
+        padding-top: 50px;
+        overflow-x: hidden;
+    }
+    @media only screen and (max-width: 600px){ 
+        .container {
+            width: 40vh;
+        }
+    }
+</style>
+<div class="container">
+    <form method="POST" action="/response">
+        <div class="mb-3 mt-auto">
+            <p class="fs-5" style="font-weight: 400;">{{ answer }}</p>
+            <input type="text" class="form-control p-2" id="text" name="text" placeholder="Ask Something..." aria-describedby="textHelp">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+
+{% endblock  %}

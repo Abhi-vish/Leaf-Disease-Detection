@@ -7,6 +7,8 @@ import torchvision.models as models
 import pandas as pd
 import numpy as np
 import csv
+from test import TableQuestionAnswering
+
 
 # Reading the dataset
 disease_info = pd.read_csv('Model/disease_info.csv')
@@ -51,9 +53,22 @@ def prediction(image_path):
 
 app = Flask(__name__)
 
-@app.route('/')
+tqa_instance = TableQuestionAnswering()
+tqa_instance.load_table('Model/DiseaseChatbotData.csv')
+
+
+@app.route('/', methods=['GET', 'POST'])
 def home():
-    return render_template('home.html')
+    answer = None  # Initialize answer as None
+    if request.method == 'POST':
+        query = request.form.get('user_input')
+        print(query)  # Check if 'query' is printed correctly
+        answer = tqa_instance.answer_query(query)
+        print(answer)  # Check if 'answer' is printed correctly
+    return render_template('home.html', answer=answer)
+
+
+
 
 @app.route('/index')
 def ai_detect_page():
@@ -108,6 +123,16 @@ def submit():
     
     # Handle errors or invalid input here (customize as needed)
     return jsonify({'error': 'Invalid request'})
+
+@app.route('/response',methods=['GET', 'POST'])
+def response():
+    answer = None  # Initialize answer as None
+    if request.method == 'POST':
+        query = request.form.get('text')
+        print(query)  # Check if 'query' is printed correctly
+        answer = tqa_instance.answer_query(query)
+        print(answer)  # Check if 'answer' is printed correctly
+    return render_template('chatbot.html',answer=answer)
 
 if __name__ == '__main__':
     app.run(debug=True)

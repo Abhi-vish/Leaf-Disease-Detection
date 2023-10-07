@@ -3,10 +3,10 @@
 {% block content %}
 <div class="container">
     <div class="row pt-5">
-        <h3 class="text-success fs-1 fw-bold mb-3 text-center">Supplements To Prevent The Leaf Disease : </h3>
+        <h3 class="text-success fs-3 fw-bold mb-3 text-center" >Supplements To Prevent The Leaf Disease : </h3>
         {% for data in supplement_data %}
-        <div class="col-sm pt-5 d-flex justify-content-center">
-            <div class="card h-100" style="width: 17rem;">
+        <div class="col-sm pt-5 p-2 d-flex justify-content-center">
+            <div class="card h-100" style="width: 15rem;">
                 <img src="{{ data['supplement_img'] }}" class="card-img-top img2" alt="{{ data['supplement'] }}"> 
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title text-success-emphasis fs-5 fw-medium">{{ data['supplement'] }}</h5>
@@ -16,6 +16,7 @@
         </div>
         {% endfor %}
     </div>
+<br>
 </div>
 
 <div class="footer-basic">

@@ -3,15 +3,19 @@
 
 
 
-<div class="container content">
-    <div>
-        <h1 class="text-center title1"><i class="fa-solid fa-leaf"> </i> Leaf Disease Detection <i class="fa-solid fa-leaf"> </i></h1>
-        <h4 class="text-center subtitle">This AI will help you to detect disease in following fruit and veggies</h4>
-    </div>
-    <div class="btn1">
-        <center>
-            <a class="mx-2" href="{{ url_for('ai_detect_page' )}}"><button type="submit" class="btn btn-outline-success">Detect Disease</button></a>
-        </center>
+<div class="container py-4 py-xl-5">
+    <div class="row gy-4 gy-md-0">
+        <div class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
+            <div style="max-width: 350px;">
+                <h2 class="text-uppercase fw-bold">Leaf disease detection</h2>
+                <p class="my-3">Welcome to the Leaf Disease Detection Project, where AI is employed to protect crops from diseases, ensuring the sustainability of our food production.</p>
+                <a class="btn btn-primary btn-lg me-2" role="button" href="{{ url_for('ai_detect_page' )}}">&nbsp; &nbsp; Detect&nbsp; &nbsp;&nbsp;</a>
+                <a class="btn btn-outline-primary btn-lg" role="button" href="{{ url_for('learnmore') }}">Learn more</a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="p-xl-5 m-xl-5"><img class="rounded img-fluid w-100 fit-cover" style="min-height: 300px;" src="{{ url_for('static', filename='assets/img/OIG.12tOccrByiV5stUjl.jpeg') }}"></div>
+        </div>
     </div>
 </div>
 

@@ -1,28 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<style>
-    .container {
-        width: 70vh;
-        height: 100%;
-        padding-top: 50px;
-        overflow-x: hidden;
-    }
-    @media only screen and (max-width: 600px){ 
-        .container {
-            width: 40vh;
-        }
-    }
-</style>
-<div class="container">
-    <form method="POST" action="/response">
-        <div class="mb-3 mt-auto">
-            <p class="fs-5" style="font-weight: 400;">{{ answer }}</p>
-            <input type="text" class="form-control p-2" id="text" name="text" placeholder="Ask Something..." aria-describedby="textHelp">
+<section class="position-relative py-4 py-xl-5">
+    <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+                <div class="card mb-5">
+                    <div class="card-body p-sm-5">
+                        <form method="POST" action="/response">
+                            <h2 class="text-center mb-4">ChatBot</h2>
+                            <p class="p-2">{{ answer }}</p>
+                            <div class="mb-3">
+                                <textarea type="text" class="form-control" id="text" name="text"  rows="6" placeholder="Ask Something..." aria-describedby="textHelp"></textarea>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary d-block w-100" type="submit">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
+    </div>
+</section>
 
 
 

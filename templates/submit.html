@@ -2,39 +2,48 @@
 
 {% block content %}
 
-<p class="text-center fw-bold fs-3 text-danger fw-medium fs-5">{{data.prediction}}</p>
-<div class="container d-flex justify-content-center">
-  <div class="card mt-5" style="width: 23rem;">
-    <img src="{{data.image}}" class="card-img-top" alt="Image">
-    <div class="card-body">
-      <h5 class="card-title">Disease Detection</h5>
-      <p class="card-text text-danger fw-medium fs-5">{{data.prediction}}</p>
-    </div>
+<div class="container py-4 py-xl-5">
+  <div class="row mb-5">
+      <div class="col-md-8 col-xl-6 text-center mx-auto">
+          <h2 class="fs-3 text-success fw-bold">Identified Plant Diseases and Disease Details</h2>
+          <p class="w-lg-50"></p>
+      </div>
+  </div>
+  <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+      <div class="col mx-auto">
+          <div><img class="rounded img-fluid d-block card-img-top"  src="{{data.image}}">
+              <div class="py-4">
+                  <h4>Disease Detection :</h4>
+                  <h4><span style="color: rgb(249, 6, 6);">{{data.prediction}}</span></h4>
+                  <p></p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container d-flex flex-column align-items-center">
+  <div class="row gy-4" style="width: 100%;">
+      <div class="col-12">
+        <h3 class="text-success fw-bold ">Brief Description</h3>
+        <p class="fw-medium fs-5" style="text-align: justify;">{{data.discrption}}</p>
+      </div>
+      <div class="col-12 col-md-6">
+        <br>
+        <h2 class="text-success fw-bold">Prevent This Plant Disease By Following Below Steps :</h2>
+        <p class="fw-medium fs-5 mt-4" style="text-align: justify;">{{data.possible_step}}</p>
+      </div>
+      <br>
+      <div  class="col-sm text-center d-flex justify-content-center align-items-center flex-column p-3">
+        <h2 class="text-success fw-bold">Supplements : </h2>
+        <img class="mt-4 m-4" src="{{data.supplement_img}}" alt="supplement" width="200px">
+        <h3 class="fs-4 mt-4 m-4">{{data.supplement_name}}</h3>
+        <button type="button" class="btn btn-primary mb-4"><a href="{{data.supplement_prod_link}}" class="text-white text-decoration-none ">Buy Product</a></button>
+      </div>
   </div>
 </div>
 
-<div class="container mt-5">
-  <h3 class="text-success fw-bold ">Brief Description</h3>
-  <p class="fw-medium fs-5" style="text-align: justify;">{{data.discrption}}</p>
-</div>
-
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-sm p-3" style="border-right :2px solid rgb(122, 121, 121);">
-      <h2 class="text-success">Prevent This Plant Disease By Following Below Steps :</h2>
-      <p class="fw-medium fs-5 mt-4" style="text-align: justify;">{{data.possible_step}}</p>
-    </div>
-    <div class="col-sm text-center d-flex justify-content-center align-items-center flex-column p-3" style="border-left: 2px solid rgb(122, 121, 121);">
-      <h2 class="text-success">Supplements : </h2>
-      <img class="mt-4" src="{{data.supplement_img}}" alt="supplement" width="200px">
-      <h3 class="fs-4 mt-4">{{data.supplement_name}}</h3>
-      <button type="button" class="btn btn-primary mb-4"><a href="{{data.supplement_prod_link}}" class="text-white text-decoration-none ">Buy Product</a></button>
-    </div>
-  </div>
-</div>
-<br><br>
 <div class="footer-basic">
-  <footer class=" pt-5">
+  <footer>
       <center>
       <div style="padding: 5;">
           <a target="_blank" href='https://github.com/Abhi-vish'><img src="static\img\github-mark-white.png" height="40" width="40"></a>&nbsp

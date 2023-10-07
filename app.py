@@ -134,5 +134,9 @@ def response():
         print(answer)  # Check if 'answer' is printed correctly
     return render_template('chatbot.html',answer=answer)
 
+@app.route('/learnmore')
+def learnmore():
+    return render_template('learnmore.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

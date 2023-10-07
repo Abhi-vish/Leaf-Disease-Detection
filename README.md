@@ -45,25 +45,18 @@ This dataset contains 87,000 RGB images of healthy and diseased crop leaves cate
 	36 : 'Tomato mosaic virus',
 	37 : 'Tomato healthy'
 
-## Screenshots
-
-#### 1. This is the homePage of the website
-
-![home_page](https://github.com/Abhi-vish/Leaf-Disease-Detection/assets/109618783/ee8acb16-820a-40fe-9764-6c3a6f073a91)
+## preview
 
 
-#### 2. This is the detection Page, where user have to upload the image of leaf, then model will detect disease, and show it on output page
 
-![detection_page](https://github.com/Abhi-vish/Leaf-Disease-Detection/assets/109618783/2d0ab020-9723-4c5c-8a2b-5922b16923f5)
+#### 1. Disease Detection 
 
-#### 3. This is the output page where it will show the disease and supplement for the cure
+![Untitled video - Made with Clipchamp (1)](https://github.com/Abhi-vish/Leaf-Disease-Detection/assets/109618783/351e1a1d-aa5c-41dd-9945-2704a0d17e82)
 
-![output_page](https://github.com/Abhi-vish/Leaf-Disease-Detection/assets/109618783/03fd896d-39e1-4cf1-a39a-1c83b6cb990a)
+#### 2. ChatBot
 
-![output_page](https://github.com/Abhi-vish/Leaf-Disease-Detection/assets/109618783/f7865f4f-4794-4b3e-9bd5-3edbd0a13bf5)
+![Untitled video - Made with Clipchamp (2)](https://github.com/Abhi-vish/Leaf-Disease-Detection/assets/109618783/4f59d686-c8f5-4581-bb41-d4967902a0d3)
 
-#### 4. It is the supplement page where supplement of all diseases are available with the link of the product
-![supplement_page](https://github.com/Abhi-vish/Leaf-Disease-Detection/assets/109618783/556c2fc3-f486-4735-a7cb-42798ecdd8d3)
 
 ## Virtual Environment 
 

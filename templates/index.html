@@ -8,8 +8,8 @@
                 <div class="col-md-8 col-xl-6 text-center mx-auto">
                     <h2 class="p-3">Detect Disease</h2>
                     <h6 class="text-center mb-2 text-muted">
-            Simply upload your plant's leaf image and then see the magic of AI.
-        </h6>
+                        Simply upload your plant's leaf image and then see the magic of AI.
+                    </h6>
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
@@ -23,10 +23,11 @@
                             </div>
                             <div class="mb-3">
                                 <br>
-                                <input class="form-control" type="file" name="image">
+                                <input id="uploadButton" class="form-control" type="file" name="image">
                             </div>
                             <div class="mb-3"></div>
                             <div class="mb-3">
+                                <!-- <button class="btn btn-primary d-block w-100" type="button" onclick="openStorageOption()">SelectFile</button> -->
                                 <button class="btn btn-primary d-block w-100" type="submit">Detect Disease</button>
                             </div>
                         </div>
@@ -36,8 +37,10 @@
         </form>
     </div>
 </section>
-
 <script>
+    function openStorageOption() {
+        Android.openFileInput();
+    }
     const actual_btn = document.getElementById('actual-btn');
     const file_choosen = document.getElementById('file-chosen')
 
@@ -45,5 +48,6 @@
         file_choosen.textContent = this.files[0].name;
     });
 </script>
+
 
 {% endblock  %}

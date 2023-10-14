@@ -8,6 +8,8 @@ import pandas as pd
 import numpy as np
 import csv
 from test import TableQuestionAnswering
+import socket
+import time
 
 
 # Reading the dataset
@@ -52,6 +54,16 @@ def prediction(image_path):
     return index
 
 app = Flask(__name__)
+
+# Define your allowed IP addresses or network ranges here
+allowed_networks = ['192.168.83.', '192.168.160.', '192.168.146.','192.168.0']
+
+def is_allowed_network(ip):
+    for network in allowed_networks:
+        if ip.startswith(network):
+            return True
+    return False
+
 
 tqa_instance = TableQuestionAnswering()
 tqa_instance.load_table('Model/DiseaseChatbotData.csv')
@@ -124,19 +136,47 @@ def submit():
     # Handle errors or invalid input here (customize as needed)
     return jsonify({'error': 'Invalid request'})
 
-@app.route('/response',methods=['GET', 'POST'])
+@app.route('/response', methods=['GET', 'POST'])
 def response():
-    answer = None  # Initialize answer as None
+    answer = ""  # Initialize answer as "Finding answer..."
+    query = ""  # Initialize query as an empty string
     if request.method == 'POST':
         query = request.form.get('text')
         print(query)  # Check if 'query' is printed correctly
+
+        # Simulate a delay for a few seconds
+        time.sleep(2)  # Adjust the delay time as needed
+
+        # Generate the answer using your 'tqa_instance'
         answer = tqa_instance.answer_query(query)
-        print(answer)  # Check if 'answer' is printed correctly
-    return render_template('chatbot.html',answer=answer)
+        
+    resp = {
+        "query": query,
+        "answer": answer
+    }
+    
+    return render_template('chatbot.html', resp=resp)
+
 
 @app.route('/learnmore')
 def learnmore():
     return render_template('learnmore.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+     # Get your current IP address
+    current_ip = socket.gethostbyname(socket.gethostname())
+
+    if is_allowed_network(current_ip):
+        # Determine which IP address to use based on your network
+        if current_ip.startswith('192.168.83.'):
+            app.run(host='192.168.83.249', port=80, debug=True)
+        elif current_ip.startswith('192.168.160.'):
+            app.run(host='192.168.160.249', port=80, debug=True)
+        elif current_ip.startswith('192.168.146.'):
+            app.run(host='192.168.146.250', port=80, debug=True)
+        elif current_ip.startswith('192.168.0'):
+            app.run(host='192.168.0.105', port=80, debug=True)
+        else:
+            print("Your network is allowed, but the IP address is not recognized.")
+    else:
+        print("Access denied. Your IP address is not in the allowed networks.")

@@ -36,7 +36,12 @@
 
   <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
 <script src="{{ url_for('static', filename='assets/bootstrap/js/bootstrap.min.js') }}"></script>
-
+<script>
+  document.getElementById("toggleNavbarButton").addEventListener("click", function() {
+      // When the button is clicked, toggle the visibility of the Bootstrap navbar
+      $("#navcol-1").toggleClass("show");
+  });
+</script>
 </body>
 
 </html>

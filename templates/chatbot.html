@@ -9,14 +9,25 @@
                     <div class="card-body p-sm-5">
                         <form method="POST" action="/response">
                             <h2 class="text-center mb-4">ChatBot</h2>
-                            <p class="p-2">{{ answer }}</p>
                             <div class="mb-3">
-                                <textarea type="text" class="form-control" id="text" name="text"  rows="6" placeholder="Ask Something..." aria-describedby="textHelp"></textarea>
+                                <textarea type="text" class="form-control p-3" id="text" name="text" placeholder="Ask Something..." aria-describedby="textHelp"></textarea>
                             </div>
+                                <button class="btn btn-primary d-block w-100" id="submit-button" type="submit">Send</button>
+                                <div class="question mt-2" id="question">Ask a question</div>
+                                <div class="answer" id="answer" style="display: none;">Generating the answer...</div>
                             <div>
-                                <button class="btn btn-primary d-block w-100" type="submit">Send</button>
                             </div>
                         </form>
+                        {% if resp %}
+                            <div class="mt-4">
+                                <strong>Question:</strong><br>
+                                {{ resp.query }}
+                            </div>
+                            <div class="mt-4">
+                                <strong>Answer:</strong><br>
+                                {{ resp.answer }}
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -24,6 +35,19 @@
     </div>
 </section>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('form');
+        const question = document.getElementById('question');
+        const answer = document.getElementById('answer');
+        const submitButton = document.getElementById('submit-button');
 
+        form.addEventListener('submit', function () {
+            question.style.display = 'none';
+            answer.style.display = 'block';
+            submitButton.disabled = true;
+        });
+    });
+</script>
 
-{% endblock  %}
+{% endblock %}

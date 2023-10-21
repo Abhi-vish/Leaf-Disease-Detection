@@ -63,27 +63,31 @@ This dataset contains 87,000 RGB images of healthy and diseased crop leaves cate
 
 
 Create a virtual environment to ensure that the project runs smoothly without any impact on your system's environment.
-
-`python -m venv <env_name>`
-
+```bash
+python -m venv myenv
+```
 And activate virtual environment by running command
-
-`<env_name>\Scripts\activate`
-
+```bash
+myenv\Scripts\activate
+```
 
 ## Installation
 
 #### Install my-project in your envrionment
 
-`step1 : clone the repo` 
-- `https://github.com/Abhi-vish/Leaf-Disease-Detection.git`
+step1 : clone the repo
+```bash
+https://github.com/Abhi-vish/Leaf-Disease-Detection.git
+```
 
-`step2 : install requirements.txt package by running commnad`
-- `pip install  -r requirements.txt`
-
-`step3 : open terminal and run commnad`
-- `python app.py `
-    
+step2 : install requirements.txt package by running commnad
+```bash
+pip install  -r requirements.txt
+```
+step3 : open terminal and run commnad
+```bash
+python app.py 
+```    
     
 ## 🚀 About Me
 I'm a student...

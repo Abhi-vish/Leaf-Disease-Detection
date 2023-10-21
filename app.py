@@ -13,8 +13,8 @@ import time
 
 
 # Reading the dataset
-disease_info = pd.read_csv('Model/disease_info.csv')
-suppliment_info = pd.read_csv("Model/supplement_info.csv", encoding='cp1252')
+disease_info = pd.read_csv('Model_assest/disease_info.csv')
+suppliment_info = pd.read_csv("Model_assest/supplement_info.csv", encoding='cp1252')
 
 # device agnostic code
 if torch.cuda.is_available():
@@ -31,7 +31,7 @@ model.fc = torch.nn.Linear(model.fc.in_features, num_classes)
 
 
 # Load the model checkpoint
-model_checkpoint_path = 'Model/model.pth'
+model_checkpoint_path = 'Model_assest/model.pth'
 model.load_state_dict(torch.load(model_checkpoint_path, map_location=device))
 model.eval()
 
@@ -66,7 +66,7 @@ def is_allowed_network(ip):
 
 
 tqa_instance = TableQuestionAnswering()
-tqa_instance.load_table('Model/DiseaseChatbotData.csv')
+tqa_instance.load_table('Model_assest/DiseaseChatbotData.csv')
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -90,7 +90,7 @@ def ai_detect_page():
 def supplement():
    # Read data from the CSV file
     supplement_data = []
-    with open('Model\supplement_info.csv', 'r') as csvfile:
+    with open('Model_assest\supplement_info.csv', 'r') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             supplement_data.append({
@@ -175,7 +175,7 @@ if __name__ == '__main__':
         elif current_ip.startswith('192.168.146.'):
             app.run(host='192.168.146.250', port=80, debug=True)
         elif current_ip.startswith('192.168.0'):
-            app.run(host='192.168.0.105', port=80, debug=True)
+            app.run(host='192.168.0.107', port=80, debug=True)
         else:
             print("Your network is allowed, but the IP address is not recognized.")
     else:

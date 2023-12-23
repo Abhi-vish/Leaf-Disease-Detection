@@ -175,7 +175,7 @@ if __name__ == '__main__':
         elif current_ip.startswith('192.168.146.'):
             app.run(host='192.168.146.250', port=80, debug=True)
         elif current_ip.startswith('192.168.0'):
-            app.run(host='192.168.0.107', port=80, debug=True)
+            app.run(host='192.168.0.106', port=80, debug=True)
         else:
             print("Your network is allowed, but the IP address is not recognized.")
     else:

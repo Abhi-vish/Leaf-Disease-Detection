@@ -162,5 +162,3 @@ def response():
 def learnmore():
     return render_template('learnmore.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)

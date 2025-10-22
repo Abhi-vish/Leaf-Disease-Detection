@@ -90,7 +90,7 @@ def ai_detect_page():
 def supplement():
    # Read data from the CSV file
     supplement_data = []
-    with open('Model_assest\supplement_info.csv', 'r') as csvfile:
+    with open('Model_assest/supplement_info.csv', 'r') as csvfile:  # just changing here sign '\' to '/' 
         reader = csv.DictReader(csvfile)
         for row in reader:
             supplement_data.append({
